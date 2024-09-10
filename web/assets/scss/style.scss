@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@use "./variables" as *;
+@use "./function/" as *;
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* reset */
+@import "./_reset.scss";
+
+// 匯入字體
+@font-face {
+    font-family: "Qomolangma-Tsumachu";
+    src: url(../font/Qomolangma-Tsumachu.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// 整體的wrap
+.lan-tibetan-wrap {
+    background-color: map-get($color, light);
+}
+
+/* 首頁區 */
+#banner {
+    position: relative;
+    height: 100vh;
+
+    .title-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        @include flexCenterCol;
+        row-gap: 20px;
+
+        .title-tc {
+            @include titleXlMedium;
+            color: map-get($color, light);
+        }
+
+        .title-tibetan {
+            font-family: $font-family-tibetan-title;
+            font-size: map-get($font-size, l);
+            color: map-get($color, light);
+            letter-spacing: .3rem;
+            @include textShadowBlur10;
+        }
+    }
+
+    .slide-box {
+        width: 100%;
+        height: 100%;
+
+        .slide {
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+}

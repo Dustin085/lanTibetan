@@ -1,0 +1,18 @@
+@use "../variables/" as *;
+
+@mixin flexCenterCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin textShadowBlur10 {
+    text-shadow: 0 0 10px map-get($color, dark);
+}
+
+@mixin titleXlMedium {
+    font-size: map-get($font-size, xl);
+    font-weight: 500;
+    letter-spacing: 0.6rem;
+    @include textShadowBlur10();
+}
