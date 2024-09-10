@@ -20,6 +20,7 @@
 }
 
 /* 首頁區 */
+/* banner區 */
 #banner {
     position: relative;
     height: 100vh;
@@ -56,6 +57,36 @@
 
             img {
                 object-fit: cover;
+            }
+        }
+    }
+}
+
+/* 最新消息 */
+#news {
+    padding: 30px 80px 20px 80px;
+
+    .news-wrap {
+        display: flex;
+
+        .title-box {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+
+            .title {
+                @include titleMBold;
+                color: map-get($color, primary1);
+            }
+
+            .illustration {
+                width: 200px;
+                height: 200px;
+                margin-left: 12px;
+
+                img {
+                    object-fit: contain;
+                }
             }
         }
     }
