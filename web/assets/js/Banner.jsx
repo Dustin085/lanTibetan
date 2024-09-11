@@ -5,6 +5,7 @@ function Banner() {
                 <div className="title-tc">荏芊堪卓</div>
                 <div className="title-tibetan">རིན་ཆེན་མཁའ་འགྲོ།</div>
             </h1>
+            {/* 之後在此加入自動輪播 */}
             <div className="slide-box">
                 <div className="slide"><img src="./assets/images/banner/banner1.jpg" alt="首頁輪播圖1" /></div>
             </div>

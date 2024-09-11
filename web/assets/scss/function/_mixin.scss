@@ -1,15 +1,23 @@
 @use "../variables/" as *;
 
+// 經典flex置中
 @mixin flexCenterCol {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+@mixin flexCenterRow {
+    display: flex;
+    align-items: center;
+}
+
+// 文字陰影
 @mixin textShadowBlur10 {
     text-shadow: 0 0 10px map-get($color, dark);
 }
 
+// 字體規範
 @mixin titleXlMedium {
     font-size: map-get($font-size, xl);
     font-weight: 500;
@@ -21,4 +29,28 @@
     font-size: map-get($font-size, m);
     font-weight: 700;
     letter-spacing: 0.15rem;
+}
+
+@mixin paraSNormal {
+    font-size: map-get($font-size, s);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: map-get($color, dark);
+}
+
+@mixin noteSNormal {
+    font-size: map-get($font-size, xs);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: map-get($color, dark);
+}
+
+// tag樣式
+@mixin lanTibetanTag {
+    @include noteSNormal;
+    padding: 8px 16px;
+    background-color: map-get($color, secondary1);
+    color: map-get($color, light);
+    border-radius: 10px;
+    line-height: map-get($font-size, xs);
 }
