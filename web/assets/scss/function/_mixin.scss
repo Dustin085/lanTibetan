@@ -69,3 +69,9 @@
     border-radius: 10px;
     line-height: map-get($font-size, xs);
 }
+
+// 背景fixed
+@mixin bgAttachFixed($url: "../images/picture/tibet-flag1.jpg") {
+    background: url($url) center/cover no-repeat;
+    background-attachment: fixed;
+}

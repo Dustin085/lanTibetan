@@ -65,7 +65,6 @@
 
 // 簡介式文章
 .lan-article {
-    width: 33.68%;
     display: flex;
     column-gap: 3rem;
 
@@ -120,7 +119,12 @@
     height: 1px;
 }
 
-/* 首頁區 */
+// 遮罩
+.figure-masked {
+    mask: url(../images/main-mask.svg) center/cover no-repeat;
+}
+
+/* 首頁從這開始 */
 /* banner區 */
 #banner {
     position: relative;
@@ -151,20 +155,24 @@
     .slide-box {
         width: 100%;
         height: 100%;
+        position: relative;
 
         .slide {
             width: 100%;
             height: 100%;
+            position: absolute;
+            overflow: hidden;
 
             img {
                 object-fit: cover;
+                transform: scale(110%);
             }
         }
     }
 }
 
 /* 最新消息 */
-#news {
+#home-page-news {
     @include flexCenterCol;
     padding: 30px 80px 20px 80px;
 
@@ -210,8 +218,56 @@
     }
 }
 
-#about {
+/* 關於我 */
+#home-page-about {
     height: 150vh;
-    @include flexCenterRow;
-    justify-content: center;
+    @include flexCenterCol;
+    padding: 80px 0px 100px 0px;
+
+    .about-wrap {
+        max-width: 1400px;
+        height: 100%;
+        @include flexCenterRow;
+        justify-content: space-between;
+        column-gap: 48px;
+    }
+
+    .about-item1 {
+        .figure-masked {
+            margin-left: 10px;
+        }
+    }
+
+    .about-item2 {
+        .lan-article {
+            max-width: 485px;
+            // width: 33.68%;
+        }
+    }
+
+    .about-item3 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-right: 30px;
+
+        .figure-masked {
+            &:first-child {
+                margin-right: 10px;
+                width: 75%;
+            }
+        }
+    }
+
+}
+
+#bg-transition1 {
+    aspect-ratio: 1440/460;
+    @include bgAttachFixed("../images/picture/tibet-flag1.jpg");
+}
+
+#home-page-tibetan-culture{
+    height: 250vh;
 }

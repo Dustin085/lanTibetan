@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>荏芊堪卓 藏文教學網</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- 連結css -->
     <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
+        integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- react元件 -->
     <script type="text/babel" src="./assets/js/Banner.jsx"></script>
     <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
@@ -25,8 +34,10 @@
                 <div className="lan-tibetan-wrap">
                     <header id="topbar"></header>
                     <main>
+                        {/* banner */}
                         <Banner />
-                        <section id="news">
+                        {/* 最新消息 */}
+                        <section id="home-page-news">
                             <div className="news-wrap">
                                 <div className="title-box">
                                     <h3 className="title">最新消息</h3>
@@ -40,9 +51,24 @@
                             </div>
                             <div className="split-line-row"></div>
                         </section>
-                        <section id="about">
-                            <LanArticle />
+                        {/* 關於我 */}
+                        <section id="home-page-about">
+                            <div class="about-wrap">
+                                <div class="about-item1">
+                                    <figure className="figure-masked"><img src="./assets/images/picture/lan1.jpg" alt="" /></figure>
+                                </div>
+                                <div class="about-item2">
+                                    <LanArticle />
+                                </div>
+                                <div class="about-item3">
+                                    <figure className="figure-masked"><img src="./assets/images/picture/lan2.jpg" alt="" /></figure>
+                                    <figure className="figure-masked"><img src="./assets/images/picture/lan3.jpg" alt="" /></figure>
+                                </div>
+                            </div>
                         </section>
+                        {/* 區塊轉換 */}
+                        <section id="bg-transition1"></section>
+                        <section id="home-page-tibetan-culture"></section>
                     </main>
                 </div>
             </>

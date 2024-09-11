@@ -152,7 +152,6 @@ input::placeholder {
 }
 
 .lan-article {
-  width: 33.68%;
   display: flex;
   column-gap: 3rem;
 }
@@ -212,7 +211,11 @@ input::placeholder {
   height: 1px;
 }
 
-/* 首頁區 */
+.figure-masked {
+  mask: url(../images/main-mask.svg) center/cover no-repeat;
+}
+
+/* 首頁從這開始 */
 /* banner區 */
 #banner {
   position: relative;
@@ -245,62 +248,104 @@ input::placeholder {
 #banner .slide-box {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 #banner .slide-box .slide {
   width: 100%;
   height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 #banner .slide-box .slide img {
   object-fit: cover;
+  transform: scale(110%);
 }
 
 /* 最新消息 */
-#news {
+#home-page-news {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px 80px 20px 80px;
 }
-#news .news-wrap {
+#home-page-news .news-wrap {
   display: flex;
   column-gap: 30px;
   max-width: 1280px;
   padding: 35px 50px 60px 35px;
 }
-#news .news-wrap .title-box {
+#home-page-news .news-wrap .title-box {
   display: flex;
   flex-direction: column;
   row-gap: 25px;
 }
-#news .news-wrap .title-box .title {
+#home-page-news .news-wrap .title-box .title {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.15rem;
   color: #18020A;
   color: #5E1721;
 }
-#news .news-wrap .title-box .illustration {
+#home-page-news .news-wrap .title-box .illustration {
   width: 200px;
   height: 200px;
   margin-left: 12px;
 }
-#news .news-wrap .title-box .illustration img {
+#home-page-news .news-wrap .title-box .illustration img {
   object-fit: contain;
 }
-#news .news-wrap .article-list {
+#home-page-news .news-wrap .article-list {
   display: flex;
   align-items: center;
 }
-#news .news-wrap .article-list .split-line-col {
+#home-page-news .news-wrap .article-list .split-line-col {
   height: 90%;
 }
-#news .split-line-row {
+#home-page-news .split-line-row {
   max-width: 1280px;
 }
 
-#about {
+/* 關於我 */
+#home-page-about {
   height: 150vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 80px 0px 100px 0px;
+}
+#home-page-about .about-wrap {
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 48px;
+}
+#home-page-about .about-item1 .figure-masked {
+  margin-left: 10px;
+}
+#home-page-about .about-item2 .lan-article {
+  max-width: 485px;
+}
+#home-page-about .about-item3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+#home-page-about .about-item3 .figure-masked:first-child {
+  margin-right: 10px;
+  width: 75%;
+}
+
+#bg-transition1 {
+  aspect-ratio: 1440/460;
+  background: url("../images/picture/tibet-flag1.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#home-page-tibetan-culture {
+  height: 250vh;
 }/*# sourceMappingURL=style.css.map */
