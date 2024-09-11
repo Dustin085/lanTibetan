@@ -8,7 +8,7 @@ function ArticleCardRow(props) {
             <a href="#" className="card-wrap">
                 <div className="content-box">
                     <p className="category">{category}</p>
-                    <p className="title">{title}</p>
+                    <h3 className="title">{title}</h3>
                     <p className="date">{date}</p>
                 </div>
                 <figure className="pic"><img src={imgUrl} alt="" /></figure>

@@ -13,6 +13,7 @@
     <!-- react元件 -->
     <script type="text/babel" src="./assets/js/Banner.jsx"></script>
     <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
+    <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
 </head>
 
 <body>
@@ -26,16 +27,21 @@
                     <main>
                         <Banner />
                         <section id="news">
-                            <div class="news-wrap">
-                                <div class="title-box">
+                            <div className="news-wrap">
+                                <div className="title-box">
                                     <h3 className="title">最新消息</h3>
                                     <figure className="illustration"><img src="./assets/images/illustration/Yak.png" alt="氂牛插圖" /></figure>
                                 </div>
                                 <div className="article-list">
-                                    <ArticleCardRow imgUrl="./assets/images/picture/buddhist-texts.jpg"/>
+                                    <ArticleCardRow imgUrl="./assets/images/picture/buddhist-texts.jpg" />
+                                    <div className="split-line-col"></div>
                                     <ArticleCardRow />
                                 </div>
                             </div>
+                            <div className="split-line-row"></div>
+                        </section>
+                        <section id="about">
+                            <LanArticle />
                         </section>
                     </main>
                 </div>
