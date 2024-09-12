@@ -120,7 +120,7 @@
 }
 
 // 遮罩
-.figure-masked {
+.picture-masked {
     mask: url(../images/main-mask.svg) center/cover no-repeat;
 }
 
@@ -233,7 +233,7 @@
     }
 
     .about-item1 {
-        .figure-masked {
+        .picture-masked {
             margin-left: 10px;
         }
     }
@@ -253,7 +253,7 @@
         justify-content: space-between;
         margin-right: 30px;
 
-        .figure-masked {
+        .picture-masked {
             &:first-child {
                 margin-right: 10px;
                 width: 75%;
@@ -268,6 +268,80 @@
     @include bgAttachFixed("../images/picture/tibet-flag1.jpg");
 }
 
-#home-page-tibetan-culture{
-    height: 250vh;
+#home-page-tibetan-culture {
+    padding: 0 0 50px 0;
+
+    .culture-wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .intro-box {
+            margin-bottom: 80px;
+
+            .pic-box {
+                position: relative;
+                margin-bottom: 50px;
+                margin-top: 20%;
+
+                .pic1 {
+                    aspect-ratio: 1033/800;
+                    width: 71.73%;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .pic2 {
+                    position: absolute;
+                    border-radius: 10px;
+                    width: 24.3%;
+                    top: -18.75%;
+                    right: 10.41%;
+                    overflow: hidden;
+                    aspect-ratio: 350/420;
+                }
+
+                .pic3 {
+                    position: absolute;
+                    border-radius: 10px;
+                    width: 34.72%;
+                    bottom: -38.5%;
+                    left: 8.33%;
+                    overflow: hidden;
+                    aspect-ratio: 500/420;
+                    filter: saturate(0.8);
+                }
+
+                img {
+                    object-position: 85%;
+                }
+            }
+        }
+
+    }
+
+    .article-box {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 80px;
+
+        .lan-article {
+            width: 42%;
+            column-gap: 1.5rem;
+
+            .end-box {
+                .subtitle {
+                    margin-bottom: 2rem;
+                }
+
+                .content {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .view-more-btn {
+                align-self: flex-end;
+            }
+        }
+    }
+
 }

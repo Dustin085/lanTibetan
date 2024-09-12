@@ -42,6 +42,11 @@ img {
   /* height: auto; */
 }
 
+/* 重置相片 */
+picture {
+  display: block;
+}
+
 /* 重置連接 */
 a {
   /* 將預設inline改成block */
@@ -211,7 +216,7 @@ input::placeholder {
   height: 1px;
 }
 
-.figure-masked {
+.picture-masked {
   mask: url(../images/main-mask.svg) center/cover no-repeat;
 }
 
@@ -321,7 +326,7 @@ input::placeholder {
   justify-content: space-between;
   column-gap: 48px;
 }
-#home-page-about .about-item1 .figure-masked {
+#home-page-about .about-item1 .picture-masked {
   margin-left: 10px;
 }
 #home-page-about .about-item2 .lan-article {
@@ -335,7 +340,7 @@ input::placeholder {
   justify-content: space-between;
   margin-right: 30px;
 }
-#home-page-about .about-item3 .figure-masked:first-child {
+#home-page-about .about-item3 .picture-masked:first-child {
   margin-right: 10px;
   width: 75%;
 }
@@ -347,5 +352,63 @@ input::placeholder {
 }
 
 #home-page-tibetan-culture {
-  height: 250vh;
+  padding: 0 0 50px 0;
+}
+#home-page-tibetan-culture .culture-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+#home-page-tibetan-culture .culture-wrap .intro-box {
+  margin-bottom: 80px;
+}
+#home-page-tibetan-culture .culture-wrap .intro-box .pic-box {
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 20%;
+}
+#home-page-tibetan-culture .culture-wrap .intro-box .pic-box .pic1 {
+  aspect-ratio: 1033/800;
+  width: 71.73%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#home-page-tibetan-culture .culture-wrap .intro-box .pic-box .pic2 {
+  position: absolute;
+  border-radius: 10px;
+  width: 24.3%;
+  top: -18.75%;
+  right: 10.41%;
+  overflow: hidden;
+  aspect-ratio: 350/420;
+}
+#home-page-tibetan-culture .culture-wrap .intro-box .pic-box .pic3 {
+  position: absolute;
+  border-radius: 10px;
+  width: 34.72%;
+  bottom: -38.5%;
+  left: 8.33%;
+  overflow: hidden;
+  aspect-ratio: 500/420;
+  filter: saturate(0.8);
+}
+#home-page-tibetan-culture .culture-wrap .intro-box .pic-box img {
+  object-position: 85%;
+}
+#home-page-tibetan-culture .article-box {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+#home-page-tibetan-culture .article-box .lan-article {
+  width: 42%;
+  column-gap: 1.5rem;
+}
+#home-page-tibetan-culture .article-box .lan-article .end-box .subtitle {
+  margin-bottom: 2rem;
+}
+#home-page-tibetan-culture .article-box .lan-article .end-box .content {
+  margin-bottom: 1rem;
+}
+#home-page-tibetan-culture .article-box .lan-article .view-more-btn {
+  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

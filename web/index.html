@@ -29,6 +29,24 @@
     <div id="root"></div>
 
     <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+
+        function CultureListItem(props) {
+            const {
+                link = "#",
+                imgUrl = "./assets/images/picture/buddhist-text3.jpg",
+                title = "藏地語文",
+            } = props;
+            return <>
+                <a href={link} className="picture-masked">
+                    <picture><img src={imgUrl} alt="" /></picture>
+                    <h3 className="title">{title}</h3>
+                    <div class="split-line-row"></div>
+                </a>
+            </>
+        }
+
         function App() {
             return <>
                 <div className="lan-tibetan-wrap">
@@ -41,7 +59,7 @@
                             <div className="news-wrap">
                                 <div className="title-box">
                                     <h3 className="title">最新消息</h3>
-                                    <figure className="illustration"><img src="./assets/images/illustration/Yak.png" alt="氂牛插圖" /></figure>
+                                    <picture className="illustration"><img src="./assets/images/illustration/Yak.png" alt="氂牛插圖" /></picture>
                                 </div>
                                 <div className="article-list">
                                     <ArticleCardRow imgUrl="./assets/images/picture/buddhist-texts.jpg" />
@@ -55,20 +73,40 @@
                         <section id="home-page-about">
                             <div class="about-wrap">
                                 <div class="about-item1">
-                                    <figure className="figure-masked"><img src="./assets/images/picture/lan1.jpg" alt="" /></figure>
+                                    <picture className="picture-masked"><img src="./assets/images/picture/lan1.jpg" alt="" /></picture>
                                 </div>
                                 <div class="about-item2">
                                     <LanArticle />
                                 </div>
                                 <div class="about-item3">
-                                    <figure className="figure-masked"><img src="./assets/images/picture/lan2.jpg" alt="" /></figure>
-                                    <figure className="figure-masked"><img src="./assets/images/picture/lan3.jpg" alt="" /></figure>
+                                    <picture className="picture-masked"><img src="./assets/images/picture/lan2.jpg" alt="" /></picture>
+                                    <picture className="picture-masked"><img src="./assets/images/picture/lan3.jpg" alt="" /></picture>
                                 </div>
                             </div>
                         </section>
                         {/* 區塊轉換 */}
                         <section id="bg-transition1"></section>
-                        <section id="home-page-tibetan-culture"></section>
+                        <section id="home-page-tibetan-culture">
+                            <div class="culture-wrap">
+                                <div class="intro-box">
+                                    <div class="pic-box">
+                                        <picture className="pic1"><img src="./assets/images/picture/buddhist-text2.jpg" alt="" /></picture>
+                                        <picture className="pic2"><img src="./assets/images/picture/mani-wheel1.jpg" alt="" /></picture>
+                                        <picture className="pic3"><img src="./assets/images/picture/tibetan-bowl1.jpg" alt="" /></picture>
+                                    </div>
+                                    <div class="article-box">
+                                        <LanArticle moreBtnIconContent="↓" />
+                                    </div>
+                                </div>
+                                <div class="culture-list-box">
+                                    <ul className="culture-list">
+                                        <li className="item">
+                                            <CultureListItem />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
                     </main>
                 </div>
             </>
