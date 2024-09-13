@@ -106,6 +106,31 @@
     }
 }
 
+// 簡易小卡列表
+.simple-card-list {
+    @include flexCenterRow;
+    padding: 50px 80px 30px 80px;
+    column-gap: 30px;
+    height: 62.5vh;
+
+    .simple-card-item {
+        flex: 1;
+
+        .simple-card {
+            .picture-masked {
+                aspect-ratio: 300/350;
+                margin-bottom: 1.5rem;
+            }
+
+            .title {
+                @include paraMNormal;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+}
+
 // 分隔線
 .split-line-col {
     background-color: map-get($color, dark-50);
@@ -344,4 +369,76 @@
         }
     }
 
+}
+
+#bg-transition2 {
+    aspect-ratio: 1440/460;
+    @include bgAttachFixed("../images/picture/view1.jpg");
+}
+
+#home-page-lesson {
+    height: 150vh;
+    padding: 100px 80px 100px 80px;
+    display: flex;
+    column-gap: 30px;
+
+    &>div {
+        flex: 1;
+    }
+
+    .start-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .article-wrap {
+            @include flexCenterCol;
+            justify-content: center;
+            flex: 1;
+
+            .lan-article {
+                // margin: 100px;
+                max-width: 485px;
+            }
+        }
+
+
+        .picture-masked {
+            height: 28.57%;
+            margin-bottom: 50px;
+        }
+    }
+
+    .end-box {
+        display: flex;
+        flex-direction: column;
+
+        .picture-masked {
+            height: 80.95%;
+            margin-bottom: 30px;
+        }
+
+        .illustration {
+            height: 15.23%;
+            align-self: flex-end;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+}
+
+#auto-carousel {
+    height: 45vh;
+    @include flexCenterRow;
+    
+    img {
+        aspect-ratio: 450/360;
+    }
+}
+
+#my-article{
+    height: 100vh;
 }

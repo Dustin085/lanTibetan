@@ -204,6 +204,28 @@ input::placeholder {
   box-shadow: 0 0 2px #18020A;
 }
 
+.simple-card-list {
+  display: flex;
+  align-items: center;
+  padding: 50px 80px 30px 80px;
+  column-gap: 30px;
+  height: 62.5vh;
+}
+.simple-card-list .simple-card-item {
+  flex: 1;
+}
+.simple-card-list .simple-card-item .simple-card .picture-masked {
+  aspect-ratio: 300/350;
+  margin-bottom: 1.5rem;
+}
+.simple-card-list .simple-card-item .simple-card .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  margin-bottom: 0.5rem;
+}
+
 .split-line-col {
   background-color: rgba(24, 2, 10, 0.5);
   width: 1px;
@@ -411,4 +433,67 @@ input::placeholder {
 }
 #home-page-tibetan-culture .article-box .lan-article .view-more-btn {
   align-self: flex-end;
+}
+
+#bg-transition2 {
+  aspect-ratio: 1440/460;
+  background: url("../images/picture/view1.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#home-page-lesson {
+  height: 150vh;
+  padding: 100px 80px 100px 80px;
+  display: flex;
+  column-gap: 30px;
+}
+#home-page-lesson > div {
+  flex: 1;
+}
+#home-page-lesson .start-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#home-page-lesson .start-box .article-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+#home-page-lesson .start-box .article-wrap .lan-article {
+  max-width: 485px;
+}
+#home-page-lesson .start-box .picture-masked {
+  height: 28.57%;
+  margin-bottom: 50px;
+}
+#home-page-lesson .end-box {
+  display: flex;
+  flex-direction: column;
+}
+#home-page-lesson .end-box .picture-masked {
+  height: 80.95%;
+  margin-bottom: 30px;
+}
+#home-page-lesson .end-box .illustration {
+  height: 15.23%;
+  align-self: flex-end;
+}
+#home-page-lesson .end-box .illustration img {
+  object-fit: contain;
+}
+
+#auto-carousel {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+}
+#auto-carousel img {
+  aspect-ratio: 450/360;
+}
+
+#my-article {
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
