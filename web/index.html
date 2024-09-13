@@ -22,6 +22,7 @@
     <!-- react元件 -->
     <script type="text/babel" src="./assets/js/Banner.jsx"></script>
     <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
+    <script type="text/babel" src="./assets/js/ArticleCardCol.jsx"></script>
     <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
     <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
 </head>
@@ -31,6 +32,8 @@
 
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
+
+
 
         function App() {
 
@@ -42,6 +45,15 @@
                     .then((response) => setCultureListData(response.data))
                     .catch((error) => console.log(error));
             }, [])
+
+            function ViewMoreBtn({ url, moreBtnIconContent="→" }) {
+                return <>
+                    <a href={url} className="view-more-btn">
+                        <p className="text">view more</p>
+                        <div className="icon">{moreBtnIconContent}</div>
+                    </a>
+                </>
+            }
 
             return <>
                 <div className="lan-tibetan-wrap">
@@ -123,7 +135,17 @@
                         </section>
                         {/* 我的文章 */}
                         <section id="my-article">
-
+                            <div class="my-article-wrap">
+                                <h3 className="title">我的文章</h3>
+                                <h4 className="subtitle">簡述簡述簡述簡述</h4>
+                                <ul className="article-card-list">
+                                    <li><ArticleCardCol imgUrl="./assets/images/picture/tibet-flag4.jpg" /></li>
+                                    <li><ArticleCardCol imgUrl="./assets/images/picture/dog2.jpg" /></li>
+                                    <li><ArticleCardCol imgUrl="./assets/images/picture/yak2.jpg" /></li>
+                                    <li><ArticleCardCol imgUrl="./assets/images/picture/tibet-flag5.jpg" /></li>
+                                </ul>
+                                <ViewMoreBtn />
+                            </div>
                         </section>
                     </main>
                 </div>

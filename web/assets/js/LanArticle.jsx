@@ -34,7 +34,7 @@ function LanArticle(props) {
     </>
 }
 
-function ViewMoreBtn({ url, moreBtnIconContent }) {
+function ViewMoreBtn({ url, moreBtnIconContent="→" }) {
     return <>
         <a href={url} className="view-more-btn">
             <p className="text">view more</p>

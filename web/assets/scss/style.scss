@@ -1,10 +1,10 @@
 @charset "UTF-8";
+@use "./_reset";
 @use "./variables" as *;
-@use "./function/" as *;
+@use "./function" as *;
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
 
 /* reset */
-@import "./_reset.scss";
 
 // 匯入字體
 @font-face {
@@ -103,6 +103,21 @@
                 box-shadow: 0 0 2px map-get($color, dark);
             }
         }
+    }
+}
+
+// 查看更多按鈕
+.view-more-btn {
+    @include paraMNormal;
+    display: flex;
+    column-gap: 8px;
+
+    .icon {
+        background-color: map-get($color, accent);
+        border-radius: 30px;
+        padding: 4px 16px;
+        line-height: 1.2;
+        box-shadow: 0 0 2px map-get($color, dark);
     }
 }
 
@@ -433,12 +448,61 @@
 #auto-carousel {
     height: 45vh;
     @include flexCenterRow;
-    
+    overflow: hidden;
+
     img {
         aspect-ratio: 450/360;
     }
 }
 
-#my-article{
-    height: 100vh;
+#my-article {
+    @include flexCenterCol;
+    padding: 100px 80px 45px 80px;
+
+    .my-article-wrap {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+
+
+        .title {
+            @include titleMMedium;
+            color: map-get($color, primary1);
+            margin-bottom: 30px
+        }
+
+        .subtitle {
+            @include titleLMedium;
+            margin-bottom: 70px;
+        }
+
+        .article-card-list {
+            @include flexCenterRow;
+            column-gap: 30px;
+            margin-bottom: 30px;
+
+            .article-card-col {
+                flex: 1;
+
+                .picture {
+                    aspect-ratio: 1/1;
+                    margin-bottom: 20px;
+                }
+
+                .title {
+                    @include paraMNormal;
+                    margin-bottom: 5px;
+                }
+
+                .time {
+                    @include paraSNormal;
+                    color: map-get($color, less1);
+                }
+            }
+        }
+
+        .view-more-btn {
+            align-self: flex-end;
+        }
+    }
 }

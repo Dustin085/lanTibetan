@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap");
-/* reset */
 /* 重置所有標籤的樣式 */
 * {
   margin: 0;
@@ -96,6 +95,7 @@ input::placeholder {
   transform: translateY(-50%);
 }
 
+/* reset */
 @font-face {
   font-family: "Qomolangma-Tsumachu";
   src: url(../font/Qomolangma-Tsumachu.ttf) format("truetype");
@@ -197,6 +197,22 @@ input::placeholder {
   column-gap: 8px;
 }
 .lan-article .end-box .view-more-btn .icon {
+  background-color: #DBA121;
+  border-radius: 30px;
+  padding: 4px 16px;
+  line-height: 1.2;
+  box-shadow: 0 0 2px #18020A;
+}
+
+.view-more-btn {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  display: flex;
+  column-gap: 8px;
+}
+.view-more-btn .icon {
   background-color: #DBA121;
   border-radius: 30px;
   padding: 4px 16px;
@@ -489,11 +505,65 @@ input::placeholder {
   height: 45vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 #auto-carousel img {
   aspect-ratio: 450/360;
 }
 
 #my-article {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 80px 45px 80px;
+}
+#my-article .my-article-wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+}
+#my-article .my-article-wrap .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  color: #18020A;
+  color: #5E1721;
+  margin-bottom: 30px;
+}
+#my-article .my-article-wrap .subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: #18020A;
+  margin-bottom: 70px;
+}
+#my-article .my-article-wrap .article-card-list {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  margin-bottom: 30px;
+}
+#my-article .my-article-wrap .article-card-list .article-card-col {
+  flex: 1;
+}
+#my-article .my-article-wrap .article-card-list .article-card-col .picture {
+  aspect-ratio: 1/1;
+  margin-bottom: 20px;
+}
+#my-article .my-article-wrap .article-card-list .article-card-col .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  margin-bottom: 5px;
+}
+#my-article .my-article-wrap .article-card-list .article-card-col .time {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  color: #CEA7AC;
+}
+#my-article .my-article-wrap .view-more-btn {
+  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */
