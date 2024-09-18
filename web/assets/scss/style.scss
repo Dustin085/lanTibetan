@@ -21,6 +21,61 @@
     background-color: map-get($color, light);
 }
 
+/* topbar */
+#topbar {
+    position: fixed;
+    width: 100%;
+    @include flexCenterRow;
+    justify-content: space-between;
+
+    .start-box {
+        .logo {
+            width: 180px;
+            height: 50px;
+        }
+    }
+
+    .end-box {
+        .menu-btn {
+            width: 48px;
+            height: 48px;
+            background-color: maroon;
+        }
+    }
+
+    .menu-overlay{
+        position: absolute;
+    }
+
+
+}
+
+/* footer */
+footer {
+    padding: 40px;
+    @include flexCenterRow;
+    justify-content: center;
+    // background-color: map-get($color, dark-20);
+
+    .copyrightText {
+        @include paraSNormal;
+        margin-right: 8px;
+        border-bottom: solid 2px transparent;
+    }
+
+    .designerLink {
+        @include paraSNormal;
+        font-weight: 500;
+        color: map-get($color, accent);
+        border-bottom: solid 2px transparent;
+        transition: border $hover-transition-time;
+
+        &:hover {
+            border-bottom: solid 2px map-get($color, accent);
+        }
+    }
+}
+
 // 文章卡片-橫式
 .article-card-row {
     @include flexCenterRow;
@@ -507,32 +562,6 @@
 
         .view-more-btn {
             align-self: flex-end;
-        }
-    }
-}
-
-/* footer */
-footer {
-    padding: 40px;
-    @include flexCenterRow;
-    justify-content: center;
-    // background-color: map-get($color, dark-20);
-
-    .copyrightText {
-        @include paraSNormal;
-        margin-right: 8px;
-        border-bottom: solid 2px transparent;
-    }
-
-    .designerLink {
-        @include paraSNormal;
-        font-weight: 500;
-        color: map-get($color, accent);
-        border-bottom: solid 2px transparent;
-        transition: border $hover-transition-time;
-
-        &:hover {
-            border-bottom: solid 2px map-get($color, accent);
         }
     }
 }

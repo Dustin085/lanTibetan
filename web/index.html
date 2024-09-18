@@ -31,6 +31,7 @@
     <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
     <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
     <script type="text/babel" src="./assets/js/Footer.jsx"></script>
+    <script type="text/babel" src="./assets/js/Topbar.jsx"></script>
 </head>
 
 <body>
@@ -73,7 +74,7 @@
 
             }, [])
 
-            function ViewMoreBtn({ url="#", moreBtnIconContent = "→" }) {
+            function ViewMoreBtn({ url = "#", moreBtnIconContent = "→" }) {
                 return <>
                     <a href={url} className="view-more-btn">
                         <p className="text">view more</p>
@@ -84,7 +85,7 @@
 
             return <>
                 <div className="lan-tibetan-wrap">
-                    <header id="topbar"></header>
+                    <Topbar />
                     <main>
                         {/* banner */}
                         <Banner />
