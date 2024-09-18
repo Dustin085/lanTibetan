@@ -60,6 +60,10 @@ body {
             background-color: transparent;
             border: none;
 
+            &:hover .bar {
+                background-color: map-get($color, dark-50);
+            }
+
             .bar {
                 display: block;
                 width: 40px;
@@ -115,6 +119,13 @@ body {
 
                     .menu-item {
                         @include paraMNormal;
+                        border-bottom: solid 2px transparent;
+                        transition: $hover-transition-time;
+
+                        &:hover {
+                            color: map-get($color, dark-80);
+                            border-bottom: solid 2px map-get($color, accent);
+                        }
                     }
 
                     .home-page-link {
@@ -182,6 +193,13 @@ body {
 
                             .menu-item {
                                 @include paraMNormal;
+                                border-bottom: solid 2px transparent;
+                                transition: $hover-transition-time;
+
+                                &:hover {
+                                    color: map-get($color, dark-80);
+                                    border-bottom: solid 2px map-get($color, accent);
+                                }
                             }
                         }
                     }
@@ -299,17 +317,20 @@ footer {
 
             .category {
                 @include lanTibetanTag;
+                transition: $hover-transition-time;
             }
 
             .title {
                 @include paraSNormal;
                 margin-left: 10px;
+                transition: $hover-transition-time;
             }
 
             .date {
                 @include paraSNormal;
                 color: map-get($color, less1);
                 margin-left: 10px;
+                transition: $hover-transition-time;
             }
         }
 
@@ -319,6 +340,31 @@ footer {
             // height: 235px;
             flex-shrink: 1;
             margin-right: 20px;
+            overflow: hidden;
+
+            img {
+                transition: $hover-transition-time;
+            }
+        }
+
+        &:hover {
+            .category {
+                transform: scale(105%);
+            }
+
+            .title {
+                color: map-get($color, dark-50);
+            }
+
+            .pic {
+                img {
+                    transform: scale(103%);
+                }
+            }
+
+            .date {
+                color: map-get($color, primary1);
+            }
         }
     }
 }
@@ -355,12 +401,30 @@ footer {
             display: flex;
             column-gap: 8px;
 
+
+
+            .text {
+                border-bottom: solid 2px transparent;
+                transition: border-bottom $hover-transition-time;
+            }
+
             .icon {
                 background-color: map-get($color, accent);
                 border-radius: 30px;
                 padding: 4px 16px;
                 line-height: 1.2;
                 box-shadow: 0 0 2px map-get($color, dark);
+                transition: $hover-transition-time;
+            }
+
+            &:hover {
+                .text {
+                    border-bottom: solid 2px map-get($color, accent);
+                }
+
+                .icon {
+                    background-color: map-get($color, light3);
+                }
             }
         }
     }
@@ -372,12 +436,28 @@ footer {
     display: flex;
     column-gap: 8px;
 
+    .text {
+        border-bottom: solid 2px transparent;
+        transition: border-bottom $hover-transition-time;
+    }
+
     .icon {
         background-color: map-get($color, accent);
         border-radius: 30px;
         padding: 4px 16px;
         line-height: 1.2;
         box-shadow: 0 0 2px map-get($color, dark);
+        transition: $hover-transition-time;
+    }
+
+    &:hover {
+        .text {
+            border-bottom: solid 2px map-get($color, accent);
+        }
+
+        .icon {
+            background-color: map-get($color, light3);
+        }
     }
 }
 
@@ -395,11 +475,28 @@ footer {
             .picture-masked {
                 aspect-ratio: 300/350;
                 margin-bottom: 1.5rem;
+
+                img {
+                    transition: $hover-transition-time;
+                }
             }
 
             .title {
                 @include paraMNormal;
                 margin-bottom: 0.5rem;
+                transition: $hover-transition-time;
+            }
+
+            &:hover {
+                .picture-masked {
+                    img {
+                        transform: scale(105%);
+                    }
+                }
+
+                .title {
+                    color: map-get($color, dark-80);
+                }
             }
         }
     }
@@ -751,16 +848,39 @@ footer {
                 .picture {
                     aspect-ratio: 1/1;
                     margin-bottom: 20px;
+                    overflow: hidden;
+
+                    img {
+                        transition: $hover-transition-time;
+                    }
                 }
 
                 .title {
                     @include paraMNormal;
                     margin-bottom: 5px;
+                    transition: $hover-transition-time;
                 }
 
                 .time {
                     @include paraSNormal;
                     color: map-get($color, less1);
+                    transition: $hover-transition-time;
+                }
+
+                &:hover {
+                    .picture {
+                        img {
+                            transform: scale(105%);
+                        }
+                    }
+
+                    .title {
+                        color: map-get($color, dark-80);
+                    }
+
+                    .time {
+                        color: map-get($color, primary1);
+                    }
                 }
             }
         }
