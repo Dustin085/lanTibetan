@@ -24,6 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
         integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 自製的utils -->
+    <script src="./assets/js/lanUtils.js"></script>
     <!-- react元件 -->
     <script type="text/babel" src="./assets/js/Banner.jsx"></script>
     <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
@@ -48,7 +50,11 @@
             const [cultureListData, setCultureListData] = useState([]);
             // 介紹文字data
             const [aboutArticleData, setAboutArticleData] = useState({ "brief": {}, "complete": {} });
+            const [cultureArticleData, setCultureArticleData] = useState({ "brief": {}, "complete": {} });
+            const [lessonArticleData, setLessonArticleData] = useState({ "brief": {}, "complete": {} });
 
+            // Ref
+            const logoRef = useRef(null);
             useEffect(() => {
                 // 取得cultureList(藏地文化列表)的資料
                 axios.get("./assets/json/homePageCultureListItem.json")
@@ -59,6 +65,16 @@
                 axios.get("./assets/json/aboutArticle.json")
                     // 取其中的簡短版
                     .then((response) => setAboutArticleData(response.data.brief))
+                    .catch((error) => console.log(error));
+
+                axios.get("./assets/json/cultureArticle.json")
+                    // 取其中的簡短版
+                    .then((response) => setCultureArticleData(response.data.brief))
+                    .catch((error) => console.log(error));
+
+                axios.get("./assets/json/lessonArticle.json")
+                    // 取其中的簡短版
+                    .then((response) => setLessonArticleData(response.data.brief))
                     .catch((error) => console.log(error));
 
 
@@ -83,11 +99,14 @@
                     }
                 });
 
-            }, [])
+                // logo顯示判斷
+                // console.log(logoRef.current);
 
-            useEffect(() => {
-                // console.log(aboutArticleData.brief);
-            }, [aboutArticleData])
+                // 初始化時判斷是否隱藏logo
+                $(window).scrollTop() < $("#banner").outerHeight() ? $(logoRef.current).hide() : $(logoRef.current).show();
+                // 指定卷軸位置，讓logo淡出淡入，此函式寫在lanUtils.js
+                fadeInUntilScrollOverEle(logoRef.current, $("#banner"));
+            }, []);
 
             function ViewMoreBtn({ url = "#", moreBtnIconContent = "→" }) {
                 return <>
@@ -100,7 +119,7 @@
 
             return <>
                 <div className="lan-tibetan-wrap">
-                    <Topbar />
+                    <Topbar logoRef={logoRef} fadeInOutLogo />
                     <main>
                         {/* banner */}
                         <Banner />
@@ -153,7 +172,15 @@
                                         <picture className="pic3"><img src="./assets/images/picture/tibetan-bowl1.jpg" alt="" /></picture>
                                     </div>
                                     <div className="article-box">
-                                        <LanArticle moreBtnIconContent="↓" />
+                                        <LanArticle
+                                            title={cultureArticleData.title}
+                                            subtitle={cultureArticleData.subtitle}
+                                            content={cultureArticleData.content}
+                                            link={cultureArticleData.link}
+                                            noMoreBtn={cultureArticleData.noMoreBtn}
+                                            moreBtnIconContent={cultureArticleData.moreBtnIconContent}
+                                        />
+                                        {/*<LanArticle moreBtnIconContent="↓" />*/}
                                     </div>
                                 </div>
                                 <div className="culture-list-box">
@@ -167,7 +194,14 @@
                         <section id="home-page-lesson">
                             <div className="start-box">
                                 <div className="article-wrap">
-                                    <LanArticle />
+                                    <LanArticle
+                                        title={lessonArticleData.title}
+                                        subtitle={lessonArticleData.subtitle}
+                                        content={lessonArticleData.content}
+                                        link={lessonArticleData.link}
+                                        noMoreBtn={lessonArticleData.noMoreBtn}
+                                        moreBtnIconContent={lessonArticleData.moreBtnIconContent}
+                                    />
                                 </div>
                                 <picture className="picture-masked"><img src="./assets/images/picture/lan-teach2.jpg" alt="" /></picture>
                             </div>
@@ -189,7 +223,7 @@
                         <section id="my-article">
                             <div className="my-article-wrap">
                                 <h3 className="title">我的文章</h3>
-                                <h4 className="subtitle">簡述簡述簡述簡述</h4>
+                                <h4 className="subtitle">透過文章更加了解藏地文化</h4>
                                 <ul className="article-card-list">
                                     <li><ArticleCardCol imgUrl="./assets/images/picture/tibet-flag4.jpg" /></li>
                                     <li><ArticleCardCol imgUrl="./assets/images/picture/dog2.jpg" /></li>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藏地宗教-荏芊堪卓 藏文教學網</title>
+    <!-- 連結favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- 連結css -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
+        integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 自製的utils -->
+    <script src="./assets/js/lanUtils.js"></script>
+    <!-- react元件 -->
+    <script type="text/babel" src="./assets/js/Banner.jsx"></script>
+    <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
+    <script type="text/babel" src="./assets/js/ArticleCardCol.jsx"></script>
+    <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
+    <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
+    <script type="text/babel" src="./assets/js/Footer.jsx"></script>
+    <script type="text/babel" src="./assets/js/Topbar.jsx"></script>
+    <script type="text/babel" src="./assets/js/SubPageBanner.jsx"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+
+
+        function App() {
+            // Ref
+            const logoRef = useRef(null);
+            useEffect(() => {
+                // 為topbar留白
+                $("#sub-page-banner").css("padding-top", $("#topbar").outerHeight() + 30);
+            }, []);
+
+            function ViewMoreBtn({ url = "#", moreBtnIconContent = "→", text = "view more" }) {
+                return <>
+                    <a href={url} className="view-more-btn">
+                        <p className="text">{text}</p>
+                        <div className="icon">{moreBtnIconContent}</div>
+                    </a>
+                </>
+            }
+
+
+
+            return <>
+                <div className="lan-tibetan-wrap">
+                    <Topbar logoRef={logoRef} />
+                    <main>
+                        <SubPageBanner
+                            imgUrl="./assets/images/picture/monk1.jpg"
+                            titleTc="藏地宗教"
+                            titleTibetan="ལུགས་སྲོལ།"
+                            onConstruction
+                        />
+                    </main>
+                    <Footer />
+                </div >
+            </>
+        }
+        ReactDOM
+            .createRoot(document.getElementById("root"))
+            .render(<App />);
+    </script>
+</body>
+
+</html>

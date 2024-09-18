@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我-荏芊堪卓 藏文教學網</title>
+    <!-- 連結favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- 連結css -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
+        integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 自製的utils -->
+    <script src="./assets/js/lanUtils.js"></script>
+    <!-- react元件 -->
+    <script type="text/babel" src="./assets/js/Banner.jsx"></script>
+    <script type="text/babel" src="./assets/js/ArticleCardRow.jsx"></script>
+    <script type="text/babel" src="./assets/js/ArticleCardCol.jsx"></script>
+    <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
+    <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
+    <script type="text/babel" src="./assets/js/Footer.jsx"></script>
+    <script type="text/babel" src="./assets/js/Topbar.jsx"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+
+
+        function App() {
+
+
+
+            // Ref
+            const logoRef = useRef(null);
+            useEffect(() => {
+                $("#sub-page-banner--about-page").css("padding-top", $("#topbar").outerHeight() + 30);
+            }, []);
+
+            function ViewMoreBtn({ url = "#", moreBtnIconContent = "→", text = "view more" }) {
+                return <>
+                    <a href={url} className="view-more-btn">
+                        <p className="text">{text}</p>
+                        <div className="icon">{moreBtnIconContent}</div>
+                    </a>
+                </>
+            }
+
+            function SubPageBanner({ titleTc = "關於荏芊堪卓", titleTibetan = "རྩོམ་ཡིག" }) {
+                return <>
+                    <section id="sub-page-banner">
+                        <picture className="banner-pic"><img src="./assets/images/picture/lan5.jpg" alt="" /></picture>
+                        <h1 className="title-box">
+                            <div className="title-tc">{titleTc}</div>
+                            <div className="title-tibetan">{titleTibetan}</div>
+                        </h1>
+                    </section>
+                </>
+            }
+
+            return <>
+                <div className="lan-tibetan-wrap">
+                    <Topbar logoRef={logoRef} />
+                    <main>
+                        <section id="sub-page-banner--about-page">
+                            <picture className="banner-pic"><img src="./assets/images/picture/lan5.jpg" alt="" /></picture>
+                            <h1 className="title-box">
+                                <div className="title-tc">關於荏芊堪卓</div>
+                                <div className="title-tibetan">རྩོམ་ཡིག</div>
+                            </h1>
+                        </section>
+                        <section id="about-page-introduction">
+                            <div className="pic-start-box">
+                                <picture className="pic picture-masked"><img src="./assets/images/picture/lan6.jpg" alt="" /></picture>
+                            </div>
+                            <div className="content-box">
+                                <div className="wrap">
+                                    <h3 className="title">我是吟唱藏曲的歌者，我是指導藏文的老師。</h3>
+                                    <div className="para-box">
+                                        <p className="content">畢業於文化大學美術系，法光研究所藏文組。因為喜愛藏族文化與藝術，而投入藏文教學工作。</p>
+                                        <p className="content">目前擔任法光佛教研究所的藏文老師，以及藏人小朋友的藏文老師。</p>
+                                        <p className="content">希望能透過說、聽、讀、寫、唱，讓同學們快樂學藏文。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pic-end-box">
+                                <picture className="pic picture-masked"><img src="./assets/images/picture/lan7.jpg" alt="" /></picture>
+                            </div>
+                        </section>
+                        <section id="bg-transition3"></section>
+                        <section id="about-page-lesson-intro">
+                            <div className="wrap">
+                                <h3 className="title">歡迎大家一起來學藏文</h3>
+                                <div className="card-list">
+                                    <div className="lesson-card-row">
+                                        <div className="start-box">
+                                            <picture className="pic"><img src="./assets/images/picture/lan8.jpg" alt="" /></picture>
+                                        </div>
+                                        <div className="end-box">
+                                            <h4 className="card-title">課程一</h4>
+                                            <p className="card-content">法光藏語入門(上)(下)<br />此課程分為上、下兩個學期，<br />包含了1.拼音、2.會話、<br />3.文法及4.基本閱讀四個單元。</p>
+                                            <ViewMoreBtn text="點我報名" />
+                                        </div>
+                                    </div>
+                                    <div className="lesson-card-row">
+                                        <div className="start-box">
+                                            <picture className="pic"><img src="./assets/images/picture/lan-teach2.jpg" alt="" /></picture>
+                                        </div>
+                                        <div className="end-box">
+                                            <h4 className="card-title">課程二</h4>
+                                            <p className="card-content">藏語中級使用來自各地，不同的藏文教材，<br />透過藏文基本句型延伸，<br />來培養藏文會話與閱讀的能力。</p>
+                                            <ViewMoreBtn text="點我報名" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <Footer />
+                </div >
+            </>
+        }
+        ReactDOM
+            .createRoot(document.getElementById("root"))
+            .render(<App />);
+    </script>
+</body>
+
+</html>

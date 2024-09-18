@@ -3,7 +3,7 @@
 @use "./variables" as *;
 @use "./function" as *;
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tibetan:wght@100..900&display=swap');
 /* reset */
 
 // 匯入字體
@@ -225,6 +225,58 @@ footer {
 
         &:hover {
             border-bottom: solid 2px map-get($color, accent);
+        }
+    }
+}
+
+// 子頁banner
+#sub-page-banner {
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .wrap {
+        height: 100%;
+        position: relative;
+
+        .banner-pic {
+            height: 100%;
+        }
+
+        .title-box {
+            position: absolute;
+            @include flexCenterCol;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            .title-tc {
+                @include titleXlNormal;
+                color: map-get($color, light)
+            }
+
+            .title-tibetan {
+                font-family: "Noto Serif Tibetan", sans-serif;
+                font-size: map-get($font-size, l);
+                color: map-get($color, light);
+                letter-spacing: .3rem;
+                @include textShadowBlur10;
+            }
+        }
+
+        .construction-text {
+            position: absolute;
+            @include titleXlNormal;
+            color: map-get($color, light);
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .construction-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
     }
 }
@@ -717,4 +769,158 @@ footer {
             align-self: flex-end;
         }
     }
+}
+
+/* 關於我頁面 */
+#sub-page-banner--about-page {
+    position: relative;
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .banner-pic {
+        height: 100%;
+    }
+
+    .title-box {
+        position: absolute;
+        @include flexCenterCol;
+        right: 200px;
+        bottom: 50px;
+
+        .title-tc {
+            @include titleXlNormal;
+            color: map-get($color, light)
+        }
+
+        .title-tibetan {
+            font-family: "Noto Serif Tibetan", sans-serif;
+            font-size: map-get($font-size, l);
+            color: map-get($color, light);
+            letter-spacing: .3rem;
+            @include textShadowBlur10;
+        }
+    }
+}
+
+#about-page-introduction {
+    height: 150vh;
+    display: flex;
+    padding: 120px 0;
+
+    .pic-start-box {
+        flex: 1;
+        position: relative;
+
+        .pic {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 73%;
+            aspect-ratio: 350/400;
+        }
+    }
+
+    .content-box {
+        flex: 1;
+        @include flexCenter;
+
+        .wrap {
+            max-width: 386px;
+            @include flexCenterCol;
+            row-gap: 3rem;
+
+            .title {
+                @include titleLMedium;
+            }
+
+            .para-box {
+                @include flexCenterCol;
+                row-gap: 1.5rem;
+
+                .content {
+                    @include paraMNormal;
+                }
+            }
+        }
+    }
+
+    .pic-end-box {
+        flex: 1;
+        position: relative;
+
+        .pic {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 83%;
+            aspect-ratio: 400/500;
+        }
+    }
+}
+
+#bg-transition3 {
+    aspect-ratio: 1440/460;
+    @include bgAttachFixed("../images/picture/tibetan-bowl2.jpg");
+}
+
+#about-page-lesson-intro {
+    padding: 120px 0;
+
+    .wrap {
+        @include flexCenterCol;
+        row-gap: 3rem;
+
+        .title {
+            @include titleLMedium;
+        }
+
+        .card-list {
+            width: 75%;
+            row-gap: 2.75rem;
+            @include flexCenterCol;
+
+            .lesson-card-row {
+                max-width: 1120px;
+                width: 100%;
+                padding: 3rem;
+                background-color: map-get($color, less1);
+                display: flex;
+                column-gap: 4rem;
+
+                &:last-child {
+                    flex-direction: row-reverse;
+                }
+
+                .start-box {
+                    flex: 1;
+
+                    .pic {
+                        height: 350px;
+                    }
+                }
+
+                .end-box {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+
+                    .card-title {
+                        @include titleLMedium;
+                    }
+
+                    .card-content {
+                        @include paraMNormal;
+                    }
+
+                    .view-more-btn {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+
 }
