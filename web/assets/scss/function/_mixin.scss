@@ -1,6 +1,12 @@
 @use "../variables/" as *;
 
 // 經典flex置中
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @mixin flexCenterCol {
     display: flex;
     flex-direction: column;
@@ -81,4 +87,9 @@
 @mixin bgAttachFixed($url: "../images/picture/tibet-flag1.jpg") {
     background: url($url) center/cover no-repeat;
     background-attachment: fixed;
+}
+
+// 背景置中cover和不重複
+@mixin bgCCN($url: "../images/logo.svg") {
+    background: url($url) center/cover no-repeat;
 }

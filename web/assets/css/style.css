@@ -103,6 +103,10 @@ input::placeholder {
   font-style: normal;
 }
 /* 共用區 */
+body.overlay-is-active {
+  overflow: hidden;
+}
+
 .lan-tibetan-wrap {
   background-color: #FAF7F0;
 }
@@ -110,22 +114,167 @@ input::placeholder {
 /* topbar */
 #topbar {
   position: fixed;
+  z-index: 100;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#topbar .start-box .logo {
-  width: 180px;
-  height: 50px;
+#topbar > .start-box {
+  z-index: 99;
 }
-#topbar .end-box .menu-btn {
+#topbar > .start-box .logo {
+  width: 180px;
+  height: 34px;
+  margin-top: 35px;
+  margin-left: 30px;
+  background: url("../images/logo.svg") center/cover no-repeat;
+}
+#topbar > .end-box {
+  z-index: 99;
+}
+#topbar > .end-box .menu-btn {
   width: 48px;
   height: 48px;
-  background-color: maroon;
+  margin-top: 25px;
+  margin-right: 25px;
+  /* 修改btn瀏覽器上預設樣式 */
+  background-color: transparent;
+  border: none;
+}
+#topbar > .end-box .menu-btn .bar {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #18020A;
+  margin: 8px auto;
+  transition: 0.35s;
+}
+#topbar > .end-box .menu-btn.is-active {
+  transform: translateX(-15px);
+}
+#topbar > .end-box .menu-btn.is-active .bar:nth-child(1) {
+  /* transform有先後順序，應先移動到中心點再轉 */
+  transform: translateY(10.5px) rotate(45deg);
+}
+#topbar > .end-box .menu-btn.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+#topbar > .end-box .menu-btn.is-active .bar:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 #topbar .menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #F1EDE3;
+  display: none;
+}
+#topbar .menu-overlay-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+#topbar .menu-overlay-wrap .start-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#topbar .menu-overlay-wrap .start-box .menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+}
+#topbar .menu-overlay-wrap .start-box .menu-list .menu-item {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+}
+#topbar .menu-overlay-wrap .start-box .menu-list .home-page-link {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: #18020A;
+}
+#topbar .menu-overlay-wrap .mid-box {
+  flex: 1.34;
+  max-width: 580px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#topbar .menu-overlay-wrap .mid-box .pic-box {
+  background-color: #FBF9F9;
+  padding: 30px;
+  aspect-ratio: 580/630;
+}
+#topbar .menu-overlay-wrap .mid-box .pic-box .picture {
+  height: 100%;
+}
+#topbar .menu-overlay-wrap .mid-box .illustration-teacher {
+  width: 65%;
+  aspect-ratio: 330/163;
   position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(50%);
+}
+#topbar .menu-overlay-wrap .end-box {
+  flex: 1;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#topbar .menu-overlay-wrap .end-box .wrap {
+  margin: 0 auto;
+  width: min-content;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+#topbar .menu-overlay-wrap .end-box .wrap .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: #18020A;
+}
+#topbar .menu-overlay-wrap .end-box .wrap .menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 1rem;
+}
+#topbar .menu-overlay-wrap .end-box .wrap .menu-list .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+#topbar .menu-overlay-wrap .end-box .wrap .menu-list .row .menu-item {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+}
+#topbar .menu-overlay-wrap .illustration-yak {
+  position: absolute;
+  right: -30px;
+  bottom: -70px;
+  height: 27%;
+  aspect-ratio: 1/1;
+  transform: scaleX(-1);
 }
 
 /* footer */

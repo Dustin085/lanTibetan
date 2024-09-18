@@ -16,6 +16,13 @@
 
 /* 共用區 */
 
+body {
+    &.overlay-is-active {
+        // 可以讓卷軸消失並且進入無法捲動的狀態
+        overflow: hidden;
+    }
+}
+
 // 整體的wrap
 .lan-tibetan-wrap {
     background-color: map-get($color, light);
@@ -24,27 +31,173 @@
 /* topbar */
 #topbar {
     position: fixed;
+    z-index: 100;
     width: 100%;
     @include flexCenterRow;
     justify-content: space-between;
 
-    .start-box {
+    >.start-box {
+        z-index: 99;
+
         .logo {
             width: 180px;
-            height: 50px;
+            height: 34px;
+            margin-top: 35px;
+            margin-left: 30px;
+            @include bgCCN("../images/logo.svg");
         }
     }
 
-    .end-box {
+    >.end-box {
+        z-index: 99;
+
         .menu-btn {
             width: 48px;
             height: 48px;
-            background-color: maroon;
+            margin-top: 25px;
+            margin-right: 25px;
+            /* 修改btn瀏覽器上預設樣式 */
+            background-color: transparent;
+            border: none;
+
+            .bar {
+                display: block;
+                width: 40px;
+                height: 3px;
+                background-color: map-get($color, dark);
+                margin: 8px auto;
+                transition: .35s;
+            }
+
+            &.is-active {
+                .bar:nth-child(1) {
+                    /* transform有先後順序，應先移動到中心點再轉 */
+                    transform: translateY(10.5px) rotate(45deg);
+                }
+
+                .bar:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .bar:nth-child(3) {
+                    transform: translateY(-10.5px) rotate(-45deg);
+                }
+
+                // 補正消失的捲軸
+                transform: translateX(-15px);
+            }
+
         }
     }
 
-    .menu-overlay{
-        position: absolute;
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: map-get($color, light2);
+        display: none;
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+
+            .start-box {
+                flex: 1;
+                @include flexCenter;
+
+                .menu-list {
+                    @include flexCenterCol;
+                    row-gap: 30px;
+
+                    .menu-item {
+                        @include paraMNormal;
+                    }
+
+                    .home-page-link {
+                        @include titleLMedium;
+                    }
+                }
+
+            }
+
+            .mid-box {
+                flex: 1.34;
+                max-width: 580px;
+                position: relative;
+                @include flexCenter;
+
+                .pic-box {
+                    background-color: map-get($color, light3);
+                    padding: 30px;
+                    aspect-ratio: 580/630;
+
+                    .picture {
+                        height: 100%;
+                    }
+                }
+
+                .illustration-teacher {
+                    width: 65%;
+                    aspect-ratio: 330/163;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    transform: translateX(50%);
+                    // @media (min-width: 1440px) {
+                    //     width: 78%;
+                    // }
+                }
+            }
+
+            .end-box {
+                flex: 1;
+                width: min-content;
+                @include flexCenter;
+
+                .wrap {
+                    margin: 0 auto;
+                    width: min-content;
+                    white-space: nowrap;
+                    @include flexCenterCol;
+                    row-gap: 2rem;
+
+                    .title {
+                        @include titleLMedium;
+                    }
+
+                    .menu-list {
+                        @include flexCenterCol;
+                        width: 100%;
+                        row-gap: 1rem;
+
+                        .row {
+                            width: 100%;
+                            @include flexCenterRow;
+                            justify-content: space-between;
+                            padding: 0 15px;
+
+                            .menu-item {
+                                @include paraMNormal;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .illustration-yak {
+                position: absolute;
+                right: -30px;
+                bottom: -70px;
+                height: 27%;
+                aspect-ratio: 1/1;
+                transform: scaleX(-1);
+            }
+        }
+
     }
 
 
