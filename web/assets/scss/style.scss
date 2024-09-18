@@ -308,6 +308,7 @@
     @include bgAttachFixed("../images/picture/tibet-flag1.jpg");
 }
 
+/* 藏地文化 */
 #home-page-tibetan-culture {
     padding: 0 0 50px 0;
 
@@ -391,6 +392,7 @@
     @include bgAttachFixed("../images/picture/view1.jpg");
 }
 
+/* 藏文課程 */
 #home-page-lesson {
     height: 150vh;
     padding: 100px 80px 100px 80px;
@@ -445,6 +447,7 @@
 
 }
 
+/* 自動輪播 */
 #auto-carousel {
     height: 45vh;
     @include flexCenterRow;
@@ -455,6 +458,7 @@
     }
 }
 
+/* 我的文章 */
 #my-article {
     @include flexCenterCol;
     padding: 100px 80px 45px 80px;
@@ -503,6 +507,32 @@
 
         .view-more-btn {
             align-self: flex-end;
+        }
+    }
+}
+
+/* footer */
+footer {
+    padding: 40px;
+    @include flexCenterRow;
+    justify-content: center;
+    // background-color: map-get($color, dark-20);
+
+    .copyrightText {
+        @include paraSNormal;
+        margin-right: 8px;
+        border-bottom: solid 2px transparent;
+    }
+
+    .designerLink {
+        @include paraSNormal;
+        font-weight: 500;
+        color: map-get($color, accent);
+        border-bottom: solid 2px transparent;
+        transition: border $hover-transition-time;
+
+        &:hover {
+            border-bottom: solid 2px map-get($color, accent);
         }
     }
 }

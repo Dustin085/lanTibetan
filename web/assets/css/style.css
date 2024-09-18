@@ -389,6 +389,7 @@ input::placeholder {
   background-attachment: fixed;
 }
 
+/* 藏地文化 */
 #home-page-tibetan-culture {
   padding: 0 0 50px 0;
 }
@@ -457,6 +458,7 @@ input::placeholder {
   background-attachment: fixed;
 }
 
+/* 藏文課程 */
 #home-page-lesson {
   height: 150vh;
   padding: 100px 80px 100px 80px;
@@ -501,6 +503,7 @@ input::placeholder {
   object-fit: contain;
 }
 
+/* 自動輪播 */
 #auto-carousel {
   height: 45vh;
   display: flex;
@@ -511,6 +514,7 @@ input::placeholder {
   aspect-ratio: 450/360;
 }
 
+/* 我的文章 */
 #my-article {
   display: flex;
   flex-direction: column;
@@ -566,4 +570,33 @@ input::placeholder {
 }
 #my-article .my-article-wrap .view-more-btn {
   align-self: flex-end;
+}
+
+/* footer */
+footer {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .copyrightText {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  margin-right: 8px;
+  border-bottom: solid 2px transparent;
+}
+footer .designerLink {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #18020A;
+  font-weight: 500;
+  color: #DBA121;
+  border-bottom: solid 2px transparent;
+  transition: border 0.35s;
+}
+footer .designerLink:hover {
+  border-bottom: solid 2px #DBA121;
 }/*# sourceMappingURL=style.css.map */

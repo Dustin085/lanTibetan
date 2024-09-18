@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>荏芊堪卓 藏文教學網</title>
+    <!-- 連結favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <!-- 連結css -->
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <!-- React CDN -->
@@ -15,6 +17,9 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
         integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
@@ -25,6 +30,7 @@
     <script type="text/babel" src="./assets/js/ArticleCardCol.jsx"></script>
     <script type="text/babel" src="./assets/js/LanArticle.jsx"></script>
     <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
+    <script type="text/babel" src="./assets/js/Footer.jsx"></script>
 </head>
 
 <body>
@@ -44,9 +50,30 @@
                 axios.get("./assets/json/homePageCultureListItem.json")
                     .then((response) => setCultureListData(response.data))
                     .catch((error) => console.log(error));
+
+                // swiper
+                const swiper = new Swiper('.swiper', {
+                    loop: true,
+                    slidesPerView: 1,
+                    autoplay: {
+                        delay: 0
+                    },
+                    speed: 15000,
+                    roundLengths: true,
+                    breakpoints: {
+                        // 當視窗寬度 >= 768px
+                        768: {
+                            slidesPerView: 2
+                        },
+                        1200: {
+                            slidesPerView: 3
+                        }
+                    }
+                });
+
             }, [])
 
-            function ViewMoreBtn({ url, moreBtnIconContent="→" }) {
+            function ViewMoreBtn({ url="#", moreBtnIconContent = "→" }) {
                 return <>
                     <a href={url} className="view-more-btn">
                         <p className="text">view more</p>
@@ -78,14 +105,14 @@
                         </section>
                         {/* 關於我 */}
                         <section id="home-page-about">
-                            <div class="about-wrap">
-                                <div class="about-item1">
+                            <div className="about-wrap">
+                                <div className="about-item1">
                                     <picture className="picture-masked"><img src="./assets/images/picture/lan1.jpg" alt="" /></picture>
                                 </div>
-                                <div class="about-item2">
+                                <div className="about-item2">
                                     <LanArticle />
                                 </div>
-                                <div class="about-item3">
+                                <div className="about-item3">
                                     <picture className="picture-masked"><img src="./assets/images/picture/lan2.jpg" alt="" /></picture>
                                     <picture className="picture-masked"><img src="./assets/images/picture/lan3.jpg" alt="" /></picture>
                                 </div>
@@ -95,18 +122,18 @@
                         <section id="bg-transition1"></section>
                         {/* 藏地文化 */}
                         <section id="home-page-tibetan-culture">
-                            <div class="culture-wrap">
-                                <div class="intro-box">
-                                    <div class="pic-box">
+                            <div className="culture-wrap">
+                                <div className="intro-box">
+                                    <div className="pic-box">
                                         <picture className="pic1"><img src="./assets/images/picture/buddhist-text2.jpg" alt="" /></picture>
                                         <picture className="pic2"><img src="./assets/images/picture/mani-wheel1.jpg" alt="" /></picture>
                                         <picture className="pic3"><img src="./assets/images/picture/tibetan-bowl1.jpg" alt="" /></picture>
                                     </div>
-                                    <div class="article-box">
+                                    <div className="article-box">
                                         <LanArticle moreBtnIconContent="↓" />
                                     </div>
                                 </div>
-                                <div class="culture-list-box">
+                                <div className="culture-list-box">
                                     <SimpleCardList listData={cultureListData} />
                                 </div>
                             </div>
@@ -115,27 +142,29 @@
                         <section id="bg-transition2"></section>
                         {/* 藏文課程 */}
                         <section id="home-page-lesson">
-                            <div class="start-box">
-                                <div class="article-wrap">
+                            <div className="start-box">
+                                <div className="article-wrap">
                                     <LanArticle />
                                 </div>
                                 <picture className="picture-masked"><img src="./assets/images/picture/lan-teach2.jpg" alt="" /></picture>
                             </div>
-                            <div class="end-box">
+                            <div className="end-box">
                                 <picture className="picture-masked"><img src="./assets/images/picture/lan-teach1.jpg" alt="" /></picture>
                                 <picture className="illustration"><img src="./assets/images/illustration/teacher1.png" alt="教書插圖" /></picture>
                             </div>
                         </section>
                         {/* 自動輪播 */}
-                        <section id="auto-carousel">
-                            <img src="./assets/images/picture/dog1.jpg" alt="" />
-                            <img src="./assets/images/picture/tibet-flag3.jpg" alt="" />
-                            <img src="./assets/images/picture/mani-wheel3.jpg" alt="" />
-                            <img src="./assets/images/picture/view2.jpg" alt="" />
+                        <section id="auto-carousel" className="swiper">
+                            <div className="swiper-wrapper" style={{ transitionTimingFunction: "linear" }}>
+                                <div className="swiper-slide"><img src="./assets/images/picture/dog1.jpg" alt="" /></div>
+                                <div className="swiper-slide"><img src="./assets/images/picture/tibet-flag3.jpg" alt="" /></div>
+                                <div className="swiper-slide"><img src="./assets/images/picture/mani-wheel3.jpg" alt="" /></div>
+                                <div className="swiper-slide"><img src="./assets/images/picture/view2.jpg" alt="" /></div>
+                            </div>
                         </section>
                         {/* 我的文章 */}
                         <section id="my-article">
-                            <div class="my-article-wrap">
+                            <div className="my-article-wrap">
                                 <h3 className="title">我的文章</h3>
                                 <h4 className="subtitle">簡述簡述簡述簡述</h4>
                                 <ul className="article-card-list">
@@ -148,6 +177,7 @@
                             </div>
                         </section>
                     </main>
+                    <Footer />
                 </div>
             </>
         }

@@ -35,7 +35,7 @@ function SimpleCardList(props) {
             <a href={link} className="simple-card">
                 <picture className="picture-masked"><img src={imgUrl} alt="" /></picture>
                 <h3 className="title">{title}</h3>
-                <div class="split-line-row"></div>
+                <div className="split-line-row"></div>
             </a>
         </>
     }
