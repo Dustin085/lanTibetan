@@ -130,6 +130,10 @@ body.overlay-is-active {
   margin-top: 35px;
   margin-left: 30px;
   background: url("../images/logo.svg") center/cover no-repeat;
+  transition: background-image 0.35s;
+}
+#topbar > .start-box .logo:hover {
+  background-image: url(../images/logo--hover.svg);
 }
 #topbar > .end-box {
   z-index: 99;

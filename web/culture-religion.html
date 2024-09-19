@@ -48,10 +48,10 @@
         function App() {
             // Ref
             const logoRef = useRef(null);
-            useEffect(() => {
-                // 為topbar留白
-                $("#sub-page-banner").css("padding-top", $("#topbar").outerHeight() + 30);
-            }, []);
+            // useEffect(() => {
+            //     // 為topbar留白
+            //     $("#sub-page-banner").css("padding-top", $("#topbar").outerHeight() + 30);
+            // }, []);
 
             function ViewMoreBtn({ url = "#", moreBtnIconContent = "→", text = "view more" }) {
                 return <>

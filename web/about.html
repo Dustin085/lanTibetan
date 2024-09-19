@@ -34,6 +34,7 @@
     <script type="text/babel" src="./assets/js/SimpleCardList.jsx"></script>
     <script type="text/babel" src="./assets/js/Footer.jsx"></script>
     <script type="text/babel" src="./assets/js/Topbar.jsx"></script>
+    <script type="text/babel" src="./assets/js/ViewMoreBtn.jsx"></script>
 </head>
 
 <body>
@@ -54,26 +55,9 @@
                 $("#sub-page-banner--about-page").css("padding-top", $("#topbar").outerHeight() + 30);
             }, []);
 
-            function ViewMoreBtn({ url = "#", moreBtnIconContent = "→", text = "view more" }) {
-                return <>
-                    <a href={url} className="view-more-btn">
-                        <p className="text">{text}</p>
-                        <div className="icon">{moreBtnIconContent}</div>
-                    </a>
-                </>
-            }
+            
 
-            function SubPageBanner({ titleTc = "關於荏芊堪卓", titleTibetan = "རྩོམ་ཡིག" }) {
-                return <>
-                    <section id="sub-page-banner">
-                        <picture className="banner-pic"><img src="./assets/images/picture/lan5.jpg" alt="" /></picture>
-                        <h1 className="title-box">
-                            <div className="title-tc">{titleTc}</div>
-                            <div className="title-tibetan">{titleTibetan}</div>
-                        </h1>
-                    </section>
-                </>
-            }
+
 
             return <>
                 <div className="lan-tibetan-wrap">

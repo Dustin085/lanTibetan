@@ -1,4 +1,9 @@
 function SubPageBanner(props) {
+    const { useEffect } = React;
+    useEffect(() => {
+        // 為topbar留白
+        $("#sub-page-banner").css("padding-top", $("#topbar").outerHeight() + 30);
+    }, []);
     const {
         imgUrl = "./assets/images/picture/lan5.jpg",
         titleTc = "關於荏芊堪卓",
