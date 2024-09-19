@@ -208,7 +208,7 @@ body.overlay-is-active {
 }
 #topbar .menu-overlay-wrap .start-box .menu-list .menu-item:hover {
   color: rgba(24, 2, 10, 0.8);
-  border-bottom: solid 2px #DBA121;
+  border-bottom: solid 2px #eeb330;
 }
 #topbar .menu-overlay-wrap .start-box .menu-list .home-page-link {
   font-size: 2rem;
@@ -286,7 +286,7 @@ body.overlay-is-active {
 }
 #topbar .menu-overlay-wrap .end-box .wrap .menu-list .row .menu-item:hover {
   color: rgba(24, 2, 10, 0.8);
-  border-bottom: solid 2px #DBA121;
+  border-bottom: solid 2px #eeb330;
 }
 #topbar .menu-overlay-wrap .illustration-yak {
   position: absolute;
@@ -318,12 +318,12 @@ footer .designerLink {
   letter-spacing: 0.05rem;
   color: #18020A;
   font-weight: 500;
-  color: #DBA121;
+  color: #eeb330;
   border-bottom: solid 2px transparent;
   transition: border 0.35s;
 }
 footer .designerLink:hover {
-  border-bottom: solid 2px #DBA121;
+  border-bottom: solid 2px #eeb330;
 }
 
 #sub-page-banner {
@@ -400,7 +400,7 @@ footer .designerLink:hover {
   letter-spacing: 0;
   color: #18020A;
   padding: 8px 16px;
-  background-color: #A36069;
+  background-color: #5E1721;
   color: #FAF7F0;
   border-radius: 10px;
   line-height: 0.875rem;
@@ -492,7 +492,7 @@ footer .designerLink:hover {
   transition: border-bottom 0.35s;
 }
 .lan-article .end-box .view-more-btn .icon {
-  background-color: #DBA121;
+  background-color: #eeb330;
   border-radius: 30px;
   padding: 4px 16px;
   line-height: 1.2;
@@ -500,7 +500,7 @@ footer .designerLink:hover {
   transition: 0.35s;
 }
 .lan-article .end-box .view-more-btn:hover .text {
-  border-bottom: solid 2px #DBA121;
+  border-bottom: solid 2px #eeb330;
 }
 .lan-article .end-box .view-more-btn:hover .icon {
   background-color: #FBF9F9;
@@ -519,7 +519,7 @@ footer .designerLink:hover {
   transition: border-bottom 0.35s;
 }
 .view-more-btn .icon {
-  background-color: #DBA121;
+  background-color: #eeb330;
   border-radius: 30px;
   padding: 4px 16px;
   line-height: 1.2;
@@ -527,7 +527,7 @@ footer .designerLink:hover {
   transition: 0.35s;
 }
 .view-more-btn:hover .text {
-  border-bottom: solid 2px #DBA121;
+  border-bottom: solid 2px #eeb330;
 }
 .view-more-btn:hover .icon {
   background-color: #FBF9F9;
@@ -1034,7 +1034,8 @@ footer .designerLink:hover {
   max-width: 1120px;
   width: 100%;
   padding: 3rem;
-  background-color: #CEA7AC;
+  border: solid 2px #CEA7AC;
+  border-radius: 1rem;
   display: flex;
   column-gap: 4rem;
 }
@@ -1046,6 +1047,8 @@ footer .designerLink:hover {
 }
 #about-page-lesson-intro .wrap .card-list .lesson-card-row .start-box .pic {
   height: 350px;
+  overflow: hidden;
+  border-radius: 0.75rem;
 }
 #about-page-lesson-intro .wrap .card-list .lesson-card-row .end-box {
   flex: 1;

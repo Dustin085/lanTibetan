@@ -1007,10 +1007,13 @@ footer {
             @include flexCenterCol;
 
             .lesson-card-row {
+                $cardBorderRadius: 1rem;
                 max-width: 1120px;
                 width: 100%;
                 padding: 3rem;
-                background-color: map-get($color, less1);
+                // background-color: map-get($color, less1);
+                border: solid 2px map-get($color, less1);
+                border-radius: $cardBorderRadius;
                 display: flex;
                 column-gap: 4rem;
 
@@ -1023,6 +1026,8 @@ footer {
 
                     .pic {
                         height: 350px;
+                        overflow: hidden;
+                        border-radius: $cardBorderRadius * 0.75;
                     }
                 }
 

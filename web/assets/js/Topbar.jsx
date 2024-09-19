@@ -69,7 +69,7 @@ function MenuOverlay({ overlayRef }) {
                         </div>
                     </div>
                 </div>
-                <picture className="illustration-yak"><img src="./assets/images/illustration/Yak.png" alt="" /></picture>
+                {/* <picture className="illustration-yak"><img src="./assets/images/illustration/Yak.png" alt="" /></picture> */}
             </div>
         </nav>
     </>

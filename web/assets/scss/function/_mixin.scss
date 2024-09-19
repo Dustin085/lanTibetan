@@ -84,7 +84,7 @@
 @mixin lanTibetanTag {
     @include noteSNormal;
     padding: 8px 16px;
-    background-color: map-get($color, secondary1);
+    background-color: map-get($color, primary1);
     color: map-get($color, light);
     border-radius: 10px;
     line-height: map-get($font-size, xs);
