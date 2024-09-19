@@ -481,6 +481,7 @@ footer .designerLink:hover {
   color: #18020A;
   display: flex;
   column-gap: 8px;
+  align-self: flex-start;
 }
 .lan-article .end-box .view-more-btn .text {
   border-bottom: solid 2px transparent;
