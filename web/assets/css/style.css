@@ -146,6 +146,7 @@ body.overlay-is-active {
   /* 修改btn瀏覽器上預設樣式 */
   background-color: transparent;
   border: none;
+  transition: 0.35s;
 }
 #topbar > .end-box .menu-btn:hover .bar {
   background-color: rgba(24, 2, 10, 0.5);

@@ -64,6 +64,7 @@ body {
             /* 修改btn瀏覽器上預設樣式 */
             background-color: transparent;
             border: none;
+            transition: .35s;
 
             &:hover .bar {
                 background-color: map-get($color, dark-50);
